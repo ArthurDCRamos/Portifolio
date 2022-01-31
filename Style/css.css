@@ -1,0 +1,349 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poiret+One&display=swap');
+*{
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+}
+html{
+    font-size: 10px;
+    font-family:'Montserrat', sans-serif;;
+    scroll-behavior: smooth;
+}
+
+.hero > div > ul > li > a{
+    text-decoration: none;
+}
+.container{
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.hero > div > ul {
+    display: flex;
+    justify-content: right;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+.hero div > ul > li {
+    display: inline;
+    float: left;
+  }
+
+.liou{
+    margin-left: 5px;
+      margin-right: 5px;
+}
+
+/*Header section*/
+#header{
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: auto;
+}
+#header img{
+    width: 20px;
+    height: 20px;
+    animation: icon_rgb 1s ease infinite;
+    filter: drop-shadow(0px 0px 10px white);
+}
+#header .header {
+    min-height: 8vh;
+    background-color: transparent;
+    transition: .3 ease baackground-color;
+    /*background-image: linear-gradient(to bottom, rgba(31, 30, 30, .8), transparent)*/
+}
+.header .nav-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    padding: 0 30px;
+    opacity: 0;
+    animation: navi_inicial .3s ease forwards;
+    animation-delay: 3s;
+}
+#header .nav-list ul {
+    list-style: none;
+    position: absolute;
+    /*background-color: rgb(31, 30, 30);*/
+    /*background-image: rgba(0, 0, 0, 0.2) url(../imagens/GeoTex.png);*/
+    background:url(../imagens/GeoTex1.png);
+    width: 100vw;
+    height: 100vh;
+    left: 100%;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    overflow-x: hidden;
+    transition: .3s ease left;
+}
+#header .nav-list h2 {
+    color: white;
+    position: relative;
+    left: -50px;
+    top: -15px;
+    text-transform: uppercase;
+}
+/*script do menu*/
+#header .nav-list ul.active{
+    left: 0;
+}
+#header .nav-list ul a {
+    font-size: 2.5rem;
+    font-weight: 500;
+    letter-spacing: .2rem;
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.5);
+    text-transform: uppercase;
+    padding: 20px;
+    display: block;
+}
+/*depois colocar o background no 1.2.3.4.5.6.7 no menu*/
+/*Hover*/
+#header .nav-list ul a::after {
+    content: attr(data-after);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    color: rgba(240, 248, 255, 0.1);
+    font-size: 10rem;
+    letter-spacing: 50px;
+    z-index: -1;
+    transition: 0.2s ease-in-out;
+    text-transform: none;
+}
+#header .nav-list ul li:hover a::after {
+    transform: translate(-50%, -50%) scale(1);
+    letter-spacing: initial;
+    overflow:hidden;
+}
+#header .nav-list ul li:hover a{
+    color: white;
+}
+/*End Hover*/
+#header .hamburger {
+    height: 30px;
+    /*width: 30px;*/
+    display: inline-block;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+    cursor: pointer;
+}
+#header .hamburger .bar {
+    height: 3px;
+    width: 20px;
+    position: relative;
+    background-color: transparent;
+    z-index: -1;
+    bottom: -9px;
+}
+#header .hamburger .bar::after,
+#header .hamburger .bar::before {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    background-color: white;
+    transition: 0.3s ease;
+    transition-property: top, bottom;
+}
+#header .hamburger .bar::after {
+    top: 4px;
+}
+#header .hamburger .bar::before{
+    bottom: 4px;
+}
+/*click script*/
+#header .hamburger.active .bar::before,
+#header .hamburger.active .bar::after{
+    top: 0;
+    bottom: 0;
+    transition: 0.3s ease;
+}
+#header .hamburger.active .bar::before{
+    transform: rotate(45deg);
+}
+#header .hamburger.active .bar::after{
+    transform: rotate(-45deg);
+}
+/*End Header*/
+
+
+
+/*Hero Section*/
+#hero{
+    background-image: url(../imagens/Fluid\ Resonance.png);
+    background-size: cover;
+    background-position: top center;
+    position: relative;
+    z-index: 1;
+}
+#hero::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    opacity: .2;
+    z-index: -1;
+}
+#hero h1 {
+    display: flex;
+    text-align: right;
+    width: fit-content;
+    font-size: 2rem;
+    position: relative;
+    color: white;
+    letter-spacing: 15px;
+    font-family: 'Poiret One', cursive;
+}
+#hero .cta{
+    display: inline-block;
+    padding: 10px 5px;
+    background-color: transparent;
+    border-bottom: 1px solid transparent;
+    font-size: 2rem;
+    opacity: 0.6;
+    margin-top: 36px;
+    transition: .3 ease;
+    left: 2px;
+    color: transparent;
+    animation: text_sub 1s ease forwards;
+    animation-delay: 2s;
+    padding-left: 0px !important;
+}
+#hero .cta1{
+    display: inline-block;
+    padding: 10px 5px;
+    background-color: transparent;
+    border-bottom: 1px solid transparent;
+    font-size: 2rem;
+    opacity: 0.6;
+    margin-top: 36px;
+    transition: .3 ease;
+    left: 2px;
+    color: transparent;
+    animation: text_sub 1s ease forwards;
+    animation-delay: 2s;
+}
+#hero .liou{
+    display: inline-block;
+    padding: 10px 5px;
+    background-color: transparent;
+    border-bottom: 1px solid transparent;
+    font-size: 2rem;
+    margin-top: 36px;
+    transition: .3 ease;
+    left: 2px;
+    color: transparent;
+    animation: text_text 1s ease forwards;
+    animation-delay: 1.5s;
+}
+#hero .cta:hover{
+    border-bottom: 1px solid white;
+    opacity: 1;
+}
+#hero .cta1:hover{
+    border-bottom: 1px solid white;
+    opacity: 1;
+}
+#hero h1 {
+    color: transparent;
+    animation: text_name 1s ease forwards;
+    animation-delay: 1s;
+}
+#hero h2 {
+    color: transparent;
+    font-size: 5rem;
+    display: flex;
+    justify-content: end;
+    text-align:right;
+    margin-top: 20px;
+    animation: text_sub 1s ease forwards;
+    animation-delay: .2s;
+}
+#hero .hero{
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 0 50px;
+    justify-content: flex-start;
+}
+
+/*End hero*/
+
+/*keyframe*/
+@keyframes text_name {
+    100% {
+        opacity: 1;
+        color: white;
+        opacity: .3;
+    }
+}
+@keyframes text_text {
+    100% {
+        opacity: 1;
+        color: white;
+    }
+}
+@keyframes text_sub {
+    100% {
+        color: white;
+    }
+}
+@keyframes navi_inicial {
+    100%{
+        opacity: 1;
+    }
+}
+/*Média de pc para celular*/
+@media only screen and (min-width: 1200px) {
+    #header .hamburger{
+        display: none;
+    }
+    #header .nav-list ul {
+        position: initial;
+        display: block;
+        height: auto;
+        width: fit-content;
+        background-color: transparent;
+        background-image: none;
+        top: -21px;
+    }
+    #header .nav-list ul li {
+        display: inline-block;
+    }
+    #header .nav-list ul li a{
+        font-size: 1.5rem;
+    }
+    #header .nav-list ul a:after {
+        display: none;
+    }
+    #hero .hero {
+        padding: 0 125px;
+    }
+    #header .nav-list h2 {
+        position: absolute;
+        top: 0;
+        transform: scale(0);
+    }
+
+}
