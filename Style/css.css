@@ -112,6 +112,7 @@ footer {
 #header .header {
     min-height: 8vh;
     background-color: transparent;
+    backdrop-filter: blur(4px);
     /*background-image: linear-gradient(to bottom, rgba(31, 30, 30, .8), transparent)*/
 }
 .header .nav-bar {
@@ -128,9 +129,9 @@ footer {
 #header .nav-list ul {
     list-style: none;
     position: absolute;
-    /*background-color: rgb(31, 30, 30);*/
+    background-color: rgba(0, 0, 0, .9);
     /*background-image: rgba(0, 0, 0, 0.2) url(../imagens/GeoTex.png);*/
-    background:url(../imagens/Img/GeoTex1.png);/*verificar fundo para mudar depois*/
+    /*background:url(../imagens/Img/GeoTex1.png);*//*verificar fundo para mudar depois*/
     width: 100vw;
     height: 100vh;
     left: 100%;
@@ -167,7 +168,7 @@ footer {
 /*depois colocar o background no 1.2.3.4.5.6.7 no menu*/
 /*Hover*/
 #header .nav-list ul a::after {
-    content: attr(data-after);
+    /*content: attr(data-after);*/
     position: absolute;
     top: 50%;
     left: 50%;
@@ -183,9 +184,12 @@ footer {
     transform: translate(-50%, -50%) scale(1);
     letter-spacing: initial;
     overflow:hidden;
+
 }
 #header .nav-list ul li:hover a{
     color: white;
+    border-bottom: 2px;
+    text-decoration: overline;
 }
 /*End Hover*/
 #header .hamburger {
@@ -414,7 +418,6 @@ footer {
     }
     #header .header {
         transition: .3s ease background-color;
-        backdrop-filter: blur(4px);
     }
     .grid {
         padding-top: 8vh;
