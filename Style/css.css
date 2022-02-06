@@ -13,21 +13,26 @@ html{
 html::-webkit-scrollbar {
     display: none;
 }
+.barra {
+    color: none;
+}
 .projetos {
     min-height: 100vh;
     width: auto;
     display: block;
-    background-image: url(../imagens/Img/pag001.jpg);
     height: 100%;
     background-position: bottom left;
 }
 
-.projetos h1 {
-    color: black;
+.tex {
+    text-transform: uppercase;
+    color: transparent;
     font-size: 8rem;
     width: 100%;
     padding-top: 8vh;
-    margin: 0 auto auto 30vh;
+    justify-content: center;
+    align-items: center;
+    transition: .3s ease;
 }
 
 /*grid projeto*/
@@ -37,31 +42,77 @@ html::-webkit-scrollbar {
     grid-auto-rows: 50vh;
     max-width: 95%;
     margin: auto;
+    overflow: hidden;
+    grid-gap: 10px;
 }
 .imagem_grid {
     position: relative;
+    overflow: hidden;
 }
 .imagem_grid .gri_img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transition: 5s ease;
+}
+.imagem_grid:hover .gri_img  {
+    transform: scale(1.5);
+}
+.imagem_grid:hover .texto_grid_colum {
+    color: white;
+}
+.imagem_grid:hover .texto_grid {
+    color: white;
+}
+.imagem_grid:hover .titulo_grid{
+    background-image: linear-gradient(to right, rgba(0, 0, 0, .3) , rgba(0, 0, 0, .2));
+    color: white;
 }
 .imagem_grid .titulo_grid {
+    background-image: linear-gradient(to right, rgba(0, 0, 0, .1) , transparent);
     position: absolute;
-    background-image: linear-gradient(to right, rgba(0, 0, 0, .5) , transparent);
     left: 0;
     bottom: 0;
     width: 100%;
-    color: white;
-    padding: 10px;
-    font-size: 20px;
+    letter-spacing: 5px;
+    color: black;
+    padding: 40px;
+    font-size: 15px;
+    height: 100%;
+    transition: .3s ease;
 }
-
+.imagem_grid .texto_grid_colum {
+    position: absolute;
+    left: 0;
+    height: 100%;
+    bottom: 0;
+    color: transparent;
+    width: 100%;
+    padding: 100px;
+    font-size: 50px;
+    transition: .3s ease;
+}
+.imagem_grid .texto_grid {
+    position: absolute;
+    left: 0;
+    height: 100%;
+    bottom: 0;
+    color: transparent;
+    width: 100%;
+    padding: 100px;
+    font-size: 25px;
+    transition: .3s ease;
+}
+.texto_grid_colum span {
+    font-size: 27px;
+}
+.texto_grid span {
+    font-size: 14px;
+}
 /*before*/
 /*Começo do footer*/
 footer {
     background-position: top left;
-    background-image: url(../imagens/Img/pag001.png);
     width: auto;
     height: 100vh;
 }
@@ -247,9 +298,9 @@ footer {
 
 /*Hero Section*/
 #hero{
-    background-image: url(../imagens/Img/Tex002.png);
+    background-image: url(../imagens/Img/Fundo001.jpg);
     background-size: cover;
-    background-position: top center;
+    background-position: top left;
     position: relative;
     z-index: 1;
 }
@@ -261,7 +312,7 @@ footer {
     height: 100%;
     width: 100%;
     background-color: black;
-    opacity: .2;
+    opacity: .05;
     z-index: -1;
 }
 #hero h1 {
@@ -374,6 +425,18 @@ footer {
     }
 }
 /*Média de pc para celular*/
+@media screen and (max-width: 1200px) {
+    .tex {
+        margin: auto auto auto auto !important;
+        text-align: center;
+    }
+    .texto_grid span {
+        font-size: 27px;
+    }
+    .imagem_grid .texto_grid {
+        font-size: 50px;
+    }    
+}
 @media only screen and (min-width: 1200px) {
     #header .hamburger{
         display: none;
@@ -412,17 +475,36 @@ footer {
         grid-template-columns: repeat(6, 1fr);
         grid-auto-rows: 46vh;
     }
+    .tex {
+        margin: 0 auto 0 30vh;
+        justify-content: none;
+        align-items: none;
+        color: transparent;
+
+    }
     /*itens separados do grid*/
-.a-1 {
-    grid-row: span 1;
-}
-.a-2 {
-    grid-row: span 2;
-}
-.l-1 {
-    grid-column: span 1;
-}
-.l-2 {
-    grid-column: span 2;
-}
+    .a-1 {
+        grid-row: span 1;
+    }
+    .a-2 {
+        grid-row: span 2;
+    }
+    .l-1 {
+        grid-column: span 1;
+    }
+    .l-2 {
+        grid-column: span 2;
+    }
+    .projetos .barra{
+        bottom: -14vh;
+        position: absolute;
+        background-color: black;
+        width: 30vh;
+        height: 20px;
+        transition: .3s ease;
+    }
+    .imagem_grid .texto_grid {
+        padding-top: 100px;
+        padding-left: 20%;
+    }
 }
