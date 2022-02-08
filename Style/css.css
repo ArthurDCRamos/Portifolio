@@ -14,25 +14,48 @@ html::-webkit-scrollbar {
     display: none;
 }
 .barra {
-    color: none;
+    color: black;
+}
+.barra1 {
+    color: black;
+}
+.barra2 {
+    color: black;
+}
+.barra3 {
+    color: black;
 }
 .projetos {
     min-height: 100vh;
     width: auto;
     display: block;
-    height: 100%;
+    height: 300vh;
     background-position: bottom left;
 }
 
 .tex {
     text-transform: uppercase;
     color: transparent;
-    font-size: 8rem;
-    width: 100%;
+    font-size: 7.9rem;
+    width: auto;
     padding-top: 8vh;
     justify-content: center;
     align-items: center;
     transition: .3s ease;
+    margin: auto auto auto auto ;
+    text-align: center;
+}
+.tex2 {
+    text-transform: uppercase;
+    color: transparent;
+    font-size: 7.9rem;
+    width: auto;
+    padding-top: 8vh;
+    justify-content: center;
+    align-items: center;
+    transition: .3s ease;
+    margin: auto auto auto auto ;
+    text-align: center;
 }
 
 /*grid projeto*/
@@ -44,7 +67,9 @@ html::-webkit-scrollbar {
     margin: auto;
     overflow: hidden;
     grid-gap: 10px;
+    transition: .4s ease;
 }
+
 .imagem_grid {
     position: relative;
     overflow: hidden;
@@ -89,7 +114,7 @@ html::-webkit-scrollbar {
     color: transparent;
     width: 100%;
     padding: 100px;
-    font-size: 50px;
+    font-size: 25px;
     transition: .3s ease;
 }
 .imagem_grid .texto_grid {
@@ -104,7 +129,7 @@ html::-webkit-scrollbar {
     transition: .3s ease;
 }
 .texto_grid_colum span {
-    font-size: 27px;
+    font-size: 14px;
 }
 .texto_grid span {
     font-size: 14px;
@@ -112,10 +137,20 @@ html::-webkit-scrollbar {
 /*before*/
 /*Começo do footer*/
 footer {
-    background-position: top left;
     width: auto;
     height: 100vh;
 }
+.baner_mid {
+    background-image: url(../imagens/Img/Party.jpg);
+    width: auto;
+    height: 60vh;
+    background-position: center;
+    background-attachment: fixed;
+    overflow: hidden;
+    z-index: 1000;
+    background-size: 175vh auto;
+}
+
 
 .hero > div > ul > li > a{
     text-decoration: none;
@@ -155,15 +190,13 @@ footer {
     height: auto;
 }
 #header img{
-    width: 20px;
     height: 20px;
     animation: icon_rgb 1s ease infinite;
-    filter: drop-shadow(0px 0px 10px white);
 }
 #header .header {
     min-height: 8vh;
-    background-color: transparent;
-    backdrop-filter: blur(4px);
+    transition: .3s ease;
+    /*backdrop-filter: blur(4px);*/
     /*background-image: linear-gradient(to bottom, rgba(31, 30, 30, .8), transparent)*/
 }
 .header .nav-bar {
@@ -298,9 +331,9 @@ footer {
 
 /*Hero Section*/
 #hero{
-    background-image: url(../imagens/Img/Fundo001.jpg);
+    background-image: url(../imagens/Img/Fundo002.jpg);
     background-size: cover;
-    background-position: top left;
+    background-position: bottom left;
     position: relative;
     z-index: 1;
 }
@@ -311,18 +344,21 @@ footer {
     top: 0;
     height: 100%;
     width: 100%;
-    background-color: black;
+    /*background-color: black;*/
     opacity: .05;
     z-index: -1;
 }
 #hero h1 {
     display: flex;
+    letter-spacing: 8px;
+    margin-left: 10px;
+    align-items: right;
+    justify-content: center;
     text-align: right;
     width: fit-content;
     font-size: 2rem;
     position: relative;
     color: white;
-    letter-spacing: 15px;
     font-family: 'Poiret One', cursive;
 }
 #hero .cta{
@@ -394,7 +430,7 @@ footer {
     max-width: 1600px;
     margin: 0 auto;
     padding: 0 50px;
-    justify-content: flex-start;
+    justify-content: flex-end;
 }
 
 /*End hero*/
@@ -405,17 +441,21 @@ footer {
     100% {
         opacity: 1;
         color: white;
+        background-color: black;
+        opacity: .3;
     }
 }
 @keyframes text_text {
     100% {
         opacity: 1;
         color: white;
+        background-color: black;
     }
 }
 @keyframes text_sub {
     100% {
         color: white;
+        background-color: black;
     }
 }
 @keyframes navi_inicial {
@@ -424,21 +464,18 @@ footer {
     }
 }
 /*Média de pc para celular*/
-@media screen and (max-width: 1200px) {
-    .tex {
-        margin: auto auto auto auto !important;
-        text-align: center;
-    }
-    .texto_grid span {
-        font-size: 27px;
-    }
-    .imagem_grid .texto_grid {
-        font-size: 50px;
-    }    
-}
+
+/*abaixo de 1200px*/
 @media only screen and (min-width: 1200px) {
     #header .hamburger{
         display: none;
+    }
+   
+    .texto_grid_colum span {
+        font-size: 19px;
+    }
+    .imagem_grid .texto_grid_colum {
+        font-size: 50px;
     }
     #header .nav-list ul {
         position: initial;
@@ -459,7 +496,7 @@ footer {
         display: none;
     }
     #hero .hero {
-        padding: 0 125px;
+        padding: 0 225px;
     }
     #header .nav-list h2 {
         position: absolute;
@@ -470,15 +507,26 @@ footer {
         transition: .3s ease background-color;
     }
     .grid {
-        margin: 0 auto auto 30vh;
+        margin-left: 30vh;
+        margin-right: 30vh;
+        margin-bottom: 30vh;
         grid-template-columns: repeat(6, 1fr);
         grid-auto-rows: 46vh;
     }
     .tex {
+        color: transparent;
+        text-align: left;
         margin: 0 auto 0 30vh;
         justify-content: none;
         align-items: none;
-        color: transparent;
+
+    }
+    .tex2 {
+        color: black;
+        text-align: left;
+        margin: 0 auto 0 30vh;
+        justify-content: none;
+        align-items: none;
 
     }
     /*itens separados do grid*/
@@ -499,11 +547,72 @@ footer {
         position: absolute;
         background-color: black;
         width: 30vh;
-        height: 20px;
+        height: 15px;
+        transition: .3s ease;
+    }
+    .projetos .barra2{
+        margin-top: 12vh;
+        position: absolute;
+        background-color: black;
+        width: 30vh;
+        height: 15px;
+        transition: .3s ease;
+    }
+    .projetos .barra1{
+        bottom: -14vh;
+        position: absolute;
+        background-color: black;
+        width: 100%;
+        height: 15px;
+        transition: .3s ease;
+    }
+    .projetos .barra3{
+        margin-top: 12vh;
+        position: absolute;
+        background-color: black;
+        width: 100%;
+        height: 15px;
         transition: .3s ease;
     }
     .imagem_grid .texto_grid {
         padding-top: 100px;
         padding-left: 20%;
+    }
+    @keyframes text_name {
+        100% {
+            color: black;
+        }
+    }
+    @keyframes text_text {
+        100% {
+            color: black;
+        }
+    }
+    @keyframes text_sub {
+        100% {
+            color: black;
+        }
+    }
+    #hero .cta:hover{
+        border-bottom: 1px solid black;
+    }
+    #hero .cta1:hover{
+        border-bottom: 1px solid black;
+    }
+    .projetos {
+        height: 130vh;
+    }
+    .baner_mid {
+        background-size:100vw auto;
+    }
+}
+@media only screen and (max-width: 400px) {
+    .tex{
+        font-size: 5.9rem;
+        margin-bottom: 8vh;
+    }
+    .tex2 {
+        font-size: 5.9rem;
+        margin-bottom: 8vh;
     }
 }
