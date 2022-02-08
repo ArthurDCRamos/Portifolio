@@ -618,4 +618,10 @@ footer {
     #hero h2 {
         font-size: 4rem;
     }
+    .projetos .barra2 {
+        margin-top: 0;
+    }
+    .projetos .barra3 {
+        margin-top: 0;
+    }
 }
