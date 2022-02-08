@@ -350,12 +350,10 @@ footer {
 }
 #hero h1 {
     display: flex;
-    letter-spacing: 8px;
-    margin-left: 10px;
+    letter-spacing: 9px;
     align-items: right;
     justify-content: center;
     text-align: right;
-    width: fit-content;
     font-size: 2rem;
     position: relative;
     color: white;
@@ -623,5 +621,17 @@ footer {
     }
     .projetos .barra3 {
         margin-top: 0;
+    }
+    .baner_mid {
+        height: 55vh;
+    }
+    .imagem_grid .texto_grid_colum {
+        font-size: 25px;
+    }
+    .imagem_grid .texto_grid {
+        font-size: 25px;
+    }
+    .texto_grid span {
+        font-size: 8px;
     }
 }
